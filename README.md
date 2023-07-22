@@ -6,7 +6,7 @@ My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.
 
 ## Manual Install instructions (Debian)
 
-(Make sure to grab my `bar` script in the `.local/bin` directory and place it in yours for the bar configuration)
+(Make sure to grab my `bar` script in the `scripts` directory and place it in yours for the bar configuration)
 
 ### Dependencies
 
@@ -28,7 +28,7 @@ sudo make clean install
 
 ## Manual Install instructions (Arch)
 
-(Make sure to grab my `bar` script in the `.local/bin` directory and place it in yours for the bar configuration)
+(Make sure to grab my `bar` script in the `scripts` directory and place it in yours for the bar configuration)
 
 ### Dependencies
 
