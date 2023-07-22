@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 
-kernel() {
-    echo -e " $(uname -r | sed s/-amd64//g)"
-}
+oscheck="$(lsb_release -is)"
+
+if [[ $oscheck == "Arch" ]] 
+then
+	kernel() {
+            echo -e " $(uname -r | sed s/1-2-zen//g)"
+        }
+elif [[ $oscheck == "Debian" ]]
+then
+        kernel() {
+            echo -e " $(uname -r | sed s/-amd64//g)"
+        }
+fi
 
 get_datetime() {
     date +"  %a %d %b %Y |   %I:%M %p"
