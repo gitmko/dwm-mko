@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+kernel() {
+    echo -e " $(uname -r | sed s/-amd64//g)"
+}
+
+get_datetime() {
+    date +"  %a %d %b %Y |   %I:%M %p %Z"
+}
+
+get_status() {
+    echo "$(kernel) $(get_datetime)";
+}
+
+while true
+do
+    xsetroot -name "$(get_status)";
+    sleep 1m;
+done
