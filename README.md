@@ -6,6 +6,12 @@ My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.
 
 ![image](dwm-desktop.png)
 
+TODO:
+- Automatic Install Script
+- Add Fedora Guide (considering the red hat situation, i might not do this)
+- Add some keybinds
+- Add window rules
+
 ## Manual Install instructions (Debian)
 
 (Make sure to grab my `bar` script in the `scripts` directory and place it in yours for the bar configuration)
@@ -24,7 +30,7 @@ sudo nala install picom volumeicon-alsa feh dunst pcmanfm kitty suckless-tools m
 ### Compiling 
 
 ```bash
-git clone https://github.com/gitmko/dwm-mko && cd dwm-mko
+git clone https://github.com/gitmko/dwm-mko ~/.dwm && cd .dwm
 sudo make clean install
 ```
 
@@ -41,6 +47,6 @@ sudo pacman -S --needed build-essentials
 ### Compiling
 
 ```bash
-git clone https://github.com/gitmko/dwm-mko && cd dwm-mko
+git clone https://github.com/gitmko/dwm-mko ~/.dwm && cd .dwm
 sudo make clean install
 ```
