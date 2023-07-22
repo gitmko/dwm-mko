@@ -8,13 +8,13 @@ My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.
 
 TODO:
 - Automatic Install Script
-- Add Fedora Guide (considering the red hat situation, i might not do this)
+- Add Fedora Guide
 - Add some keybinds
 - Add window rules
 
 ## Manual Install instructions (Debian)
 
-(Make sure to grab my `bar` script in the `scripts` directory and place it in yours for the bar configuration)
+(I have a script titled `bar` in the `scripts` directory, if you want to change the script and where it's executed from, check `autostart.sh`)
 
 ### Dependencies
 
@@ -36,7 +36,7 @@ sudo make clean install
 
 ## Manual Install instructions (Arch)
 
-(Make sure to grab my `bar` script in the `scripts` directory and place it in yours for the bar configuration)
+(I have a script titled `bar` in the `scripts` directory, if you want to change the script and where it's executed from, check `autostart.sh`)
 
 ### Dependencies
 

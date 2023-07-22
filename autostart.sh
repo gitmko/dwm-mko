@@ -1,4 +1,4 @@
-bash $HOME/.local/bin/bar &
+bash $HOME/.dwm/bar &
 bash $HOME/.fehbg &
 volumeicon &
 dunst &
