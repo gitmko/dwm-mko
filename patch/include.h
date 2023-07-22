@@ -12,8 +12,6 @@
 /* Other patches */
 #include "attachx.h"
 #include "autostart.h"
-#include "pertag.h"
-#include "placemouse.h"
 #include "warp.h"
 /* Layouts */
 #include "layout_monocle.h"

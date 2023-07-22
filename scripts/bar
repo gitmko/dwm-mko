@@ -5,7 +5,7 @@ oscheck="$(lsb_release -is)"
 if [[ $oscheck == "Arch" ]] 
 then
 	kernel() {
-            echo -e " $(uname -r | sed s/1-2-zen//g)"
+            echo -e " $(uname -r | sed s/1-1-zen//g)"
         }
 elif [[ $oscheck == "Debian" ]]
 then

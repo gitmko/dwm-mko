@@ -15,7 +15,7 @@ static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int showsystray             = 1;   /* 0 means no systray */
 static const char ptagf[] = "[%s %s]";          /* format of a tag label */
 static const char etagf[] = "[%s]";             /* format of an empty tag */
-static const int lcaselbl = 1;                  /* 1 means make tag label lowercase */
+static const int lcaselbl = 0;                  /* 1 means make tag label lowercase */
 
 
 
@@ -23,6 +23,7 @@ static const int lcaselbl = 1;                  /* 1 means make tag label lowerc
 static int tagindicatortype              = INDICATOR_TOP_LEFT_SQUARE;
 static int tiledindicatortype            = INDICATOR_NONE;
 static int floatindicatortype            = INDICATOR_TOP_LEFT_SQUARE;
+
 static const char *fonts[]               = { "FiraMono Nerd Font:size=12" };
 static const char dmenufont[]            = "FiraMono Nerd Font:size=12";
 
@@ -81,6 +82,7 @@ static char *colors[][ColCount] = {
 	[SchemeHidSel]       = { hidselfgcolor,    hidselbgcolor,    c000000,              c000000 },
 	[SchemeUrg]          = { urgfgcolor,       urgbgcolor,       urgbordercolor,       urgfloatcolor },
 };
+
 
 
 
@@ -261,6 +263,7 @@ static const Key keys[] = {
 };
 
 
+
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static const Button buttons[] = {
@@ -269,17 +272,7 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,                   Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,                   Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,                   Button2,        spawn,          {.v = termcmd } },
-	/* placemouse options, choose which feels more natural:
-	 *    0 - tiled position is relative to mouse cursor
-	 *    1 - tiled postiion is relative to window center
-	 *    2 - mouse pointer warps to window center
-	 *
-	 * The moveorplace uses movemouse or placemouse depending on the floating state
-	 * of the selected client. Set up individual keybindings for the two if you want
-	 * to control these separately (i.e. to retain the feature to move a tiled window
-	 * into a floating position).
-	 */
-	{ ClkClientWin,         MODKEY,              Button1,        moveorplace,    {.i = 1} },
+	{ ClkClientWin,         MODKEY,              Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,              Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,              Button3,        resizemouse,    {0} },
 	{ ClkTagBar,            0,                   Button1,        view,           {0} },
