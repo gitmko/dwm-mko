@@ -5,7 +5,7 @@ kernel() {
 }
 
 get_datetime() {
-    date +"  %a %d %b %Y |   %I:%M %p %Z"
+    date +"  %a %d %b %Y |   %I:%M %p"
 }
 
 get_status() {
