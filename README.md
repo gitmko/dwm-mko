@@ -1,4 +1,4 @@
-![image](dwm.png)
+![image](dwm-logo.png)
 
 # dwm-mko
 
