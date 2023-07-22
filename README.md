@@ -11,7 +11,7 @@ My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.
 ### Dependencies
 
 ```bash
-sudo apt install picom volumeicon-alsa feh dunst pcmanfm kitty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg
+sudo apt install picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg
 ```
 Or with [nala](https://github.com/volitank/nala)
 
@@ -33,7 +33,7 @@ sudo make clean install
 ### Dependencies
 
 ```bash
-sudo pacman -Syyu picom volumeicon dunst feh pcmanmfm kitty dmenu xorg-xinit xorg
+sudo pacman -Syyu picom volumeicon dunst feh pcmanmfm alacritty dmenu xorg-xinit xorg
 sudo pacman -S --needed build-essentials
 ```
 ### Compiling
