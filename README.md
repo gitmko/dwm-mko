@@ -4,6 +4,8 @@
 
 My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.com/bakkeby/dwm-flexipatch)
 
+![image](dwm-desktop.png)
+
 ## Manual Install instructions (Debian)
 
 (Make sure to grab my `bar` script in the `scripts` directory and place it in yours for the bar configuration)
