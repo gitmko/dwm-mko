@@ -2,7 +2,7 @@
 
 # dwm-mko
 
-My Heavily Patched DWM Configuration
+My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.com/bakkeby/dwm-flexipatch)
 
 ## Manual Install instructions (Debian)
 
