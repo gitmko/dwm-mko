@@ -14,6 +14,14 @@ TODO:
 
 ## Automatic Installation (alpha)
 
+#### Clean Arch Install
+
+If you're running on a clean arch install, the `lsb-release` package (needed for the install script) won't be installed, install it with
+
+```bash
+sudo pacman -S lsb-release
+```
+
 (script requires `sudo` for some commands, read into it if you want)
 
 ```bash

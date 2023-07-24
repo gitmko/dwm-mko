@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
+mkdir -p $HOME/.local/share/fonts/OTF
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraMono.zip -q
 unzip -qq FiraMono.zip
 command rm LICENSE
 command rm readme.md
 command rm FiraMono.zip
-mkdir -p $HOME/.local/share/fonts/OTF/
-mv *.otf $HOME/.local/share/fonts/OTF/ 
+mv *.otf $HOME/.local/share/fonts/OTF
 
 echo "Font installed!"
