@@ -7,7 +7,7 @@ My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.
 ![image](images/dwm-desktop.png)
 
 TODO:
-- ~~Automatic Install Script~~
+- ~~Automatic Install Script~~ *WORKING ON THIS!*
 - Add Fedora Guide
 - Add some keybinds
 - Add window rules
@@ -27,12 +27,12 @@ sudo bash ./install
 ### Dependencies
 
 ```bash
-sudo apt install picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg -y
+sudo apt install flameshot picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip -y
 ```
 Or with [nala](https://github.com/volitank/nala)
 
 ```bash
-sudo nala install picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg -y
+sudo nala install flameshot picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip -y
 ```
 
 ### Compiling 
