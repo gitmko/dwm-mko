@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+if [ "$EUID" -ne 0 ]
+  then echo "Please run the install script with sudo."
+  exit
+fi
+
+oscheck="$(lsb_release -is)"
+
+if [[ $oscheck == "Arch" ]] 
+then
+        # Printing distro check
+	echo "Detected distro: $oscheck";
+        # Dependency installation
+        sudo pacman -Syyu picom volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg;
+        sudo pacman -S --needed base-devel;
+        # Cloning
+        git clone https://github.com/gitmko/dwm-mko /home/$SUDO_USER/.dwm;
+        # Installing fonts
+        bash /home/$SUDO_USER/.dwm/fonts;
+        # Compiling
+        cd /home/$SUDO_USER/.dwm;
+        sudo make clean install;
+        # Confirm that we're done
+        echo "dwm-mko has been installed on your arch machine!";
+elif [[ $oscheck == "Debian" ]]
+then
+        # Printing distro check
+        echo "Detected distro: $oscheck";
+        # Dependency installation
+        sudo apt install nala;
+        echo "Nala has been installed! (thank me later)";
+        sudo nala install picom volumeicon-alsa feh dunst pcmanfm kitty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg;
+        # Cloning
+        git clone https://github.com/gitmko/dwm-mko /home/$SUDO_USER/.dwm;
+        # Installing fonts
+        bash /home/$SUDO_USER/.dwm/fonts;
+        # Compiling
+        cd /home/$SUDO_USER/.dwm;
+        sudo make clean install;
+        # Confirm that we're done
+        echo "dwm-mko has been installed on your debian machine!";
+else
+        echo "Distro currently not supported, please make a PR/issue on github"
+fi
+
+## FEDORA SUPPORT COMING IN THE FUTURE
+
+# elif [[ $oscheck == "Fedora" ]]
+# then
+#         # Printing distro check
+#         echo "Detected distro: $oscheck";
+#         # Compiling
+#         git clone https://github.com/gitmko/dwm-mko /home/$SUDO_USER/.dwm;
+#         cd /home/$SUDO_USER/.dwm;
+#         sudo make clean install;

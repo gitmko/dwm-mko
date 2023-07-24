@@ -1,10 +1,10 @@
-![image](dwm-logo.png)
+![image](images/dwm-logo.png)
 
 # dwm-mko
 
 My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.com/bakkeby/dwm-flexipatch)
 
-![image](dwm-desktop.png)
+![image](images/dwm-desktop.png)
 
 TODO:
 - Automatic Install Script
