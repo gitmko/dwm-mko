@@ -14,10 +14,10 @@ then
         # Dependency installation
         sudo pacman -Syyu picom volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget --noconfirm;
         sudo pacman -S --needed base-devel --noconfirm;
-        # Installing fonts
-        bash /home/$SUDO_USER/.dwm/scripts/fonts;
-        # Compiling
+         # Installing fonts
         cd /home/$SUDO_USER/.dwm;
+        bash ./scripts/fonts;
+        # Compiling
         sudo make clean install;
         # Confirm that we're done
         echo "dwm-mko has been installed on your arch machine!";
@@ -30,9 +30,9 @@ then
         echo "Nala has been installed! (thank me later)";
         sudo nala install picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip flameshot -y;
         # Installing fonts
-        bash /home/$SUDO_USER/.dwm/scripts/fonts;
-        # Compiling
         cd /home/$SUDO_USER/.dwm;
+        bash ./scripts/fonts;
+        # Compiling
         sudo make clean install;
         # Confirm that we're done
         echo "dwm-mko has been installed on your debian machine!";
