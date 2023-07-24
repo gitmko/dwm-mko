@@ -230,6 +230,7 @@ static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
 
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *filemanager[] = { "pcmanfm", NULL };
+static const char *screenshot[] = { "flameshot", "gui", NULL };
 
 
 static const Key keys[] = {
@@ -237,6 +238,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = roficmd } },
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_Return,     spawn,                  {.v = filemanager } },
+	{ MODKEY|ShiftMask, 			XK_s,		   spawn,			       { .v = screenshot } },
 	{ MODKEY,                       XK_b,          togglebar,              {0} },
 	{ MODKEY,                       XK_j,          focusstack,             {.i = +1 } },
 	{ MODKEY,                       XK_k,          focusstack,             {.i = -1 } },

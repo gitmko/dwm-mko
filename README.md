@@ -53,8 +53,8 @@ bash fonts
 ### Dependencies
 
 ```bash
-sudo pacman -Syyu picom volumeicon dunst feh pcmanfm alacritty dmenu xorg-xinit xorg
-sudo pacman -S --needed build-devel
+sudo pacman -Syyu flameshot wget picom volumeicon dunst feh pcmanfm alacritty dmenu xorg-xinit xorg --noconfirm
+sudo pacman -S --needed build-devel --noconfirm
 ```
 ### Compiling
 
