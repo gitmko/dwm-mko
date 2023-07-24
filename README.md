@@ -27,12 +27,12 @@ sudo bash ./install
 ### Dependencies
 
 ```bash
-sudo apt install picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg
+sudo apt install picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg -y
 ```
 Or with [nala](https://github.com/volitank/nala)
 
 ```bash
-sudo nala install picom volumeicon-alsa feh dunst pcmanfm kitty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg
+sudo nala install picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg -y
 ```
 
 ### Compiling 
@@ -46,13 +46,6 @@ sudo make clean install
 ```bash
 cd $HOME/.dwm/scripts/
 bash fonts
-```
-#### Bar Script
-
-```bash
-cd $HOME/.dwm/scripts/
-mkdir -p $HOME/.local/bin/
-mv bar $HOME/.local/bin/
 ```
 
 ## Manual Install instructions (Arch)
@@ -75,11 +68,4 @@ sudo make clean install
 ```bash
 cd $HOME/.dwm/scripts/
 bash fonts
-```
-#### Bar Script
-
-```bash
-cd $HOME/.dwm/scripts/
-mkdir -p $HOME/.local/bin/
-mv bar $HOME/.local/bin/
 ```
