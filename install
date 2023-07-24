@@ -14,8 +14,6 @@ then
         # Dependency installation
         sudo pacman -Syyu picom volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg;
         sudo pacman -S --needed base-devel;
-        # Cloning
-        git clone https://github.com/gitmko/dwm-mko /home/$SUDO_USER/.dwm;
         # Installing fonts
         bash /home/$SUDO_USER/.dwm/fonts;
         # Compiling
@@ -31,8 +29,6 @@ then
         sudo apt install nala;
         echo "Nala has been installed! (thank me later)";
         sudo nala install picom volumeicon-alsa feh dunst pcmanfm kitty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg;
-        # Cloning
-        git clone https://github.com/gitmko/dwm-mko /home/$SUDO_USER/.dwm;
         # Installing fonts
         bash /home/$SUDO_USER/.dwm/fonts;
         # Compiling
@@ -50,7 +46,5 @@ fi
 # then
 #         # Printing distro check
 #         echo "Detected distro: $oscheck";
-#         # Compiling
-#         git clone https://github.com/gitmko/dwm-mko /home/$SUDO_USER/.dwm;
 #         cd /home/$SUDO_USER/.dwm;
 #         sudo make clean install;

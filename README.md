@@ -7,14 +7,22 @@ My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.
 ![image](images/dwm-desktop.png)
 
 TODO:
-- Automatic Install Script
+- ~~Automatic Install Script~~
 - Add Fedora Guide
 - Add some keybinds
 - Add window rules
 
-## Manual Install instructions (Debian)
+## Automatic Installation (alpha)
 
-(I have a script titled `bar` in the `scripts` directory, if you want to change the script and where it's executed from, check `autostart.sh`)
+(script requires `sudo` for some commands, read into it if you want)
+
+```bash
+git clone https://github.com/gitmko/dwm-mko $HOME/.dwm
+cd $HOME/.dwm
+sudo bash ./install
+```
+
+## Manual Install instructions (Debian)
 
 ### Dependencies
 
@@ -33,20 +41,45 @@ sudo nala install picom volumeicon-alsa feh dunst pcmanfm kitty suckless-tools m
 git clone https://github.com/gitmko/dwm-mko ~/.dwm && cd .dwm
 sudo make clean install
 ```
+#### Fonts
+
+```bash
+cd $HOME/.dwm/scripts/
+bash fonts
+```
+#### Bar Script
+
+```bash
+cd $HOME/.dwm/scripts/
+mkdir -p $HOME/.local/bin/
+mv bar $HOME/.local/bin/
+```
 
 ## Manual Install instructions (Arch)
-
-(I have a script titled `bar` in the `scripts` directory, if you want to change the script and where it's executed from, check `autostart.sh`)
 
 ### Dependencies
 
 ```bash
-sudo pacman -Syyu picom volumeicon dunst feh pcmanmfm alacritty dmenu xorg-xinit xorg
-sudo pacman -S --needed build-essentials
+sudo pacman -Syyu picom volumeicon dunst feh pcmanfm alacritty dmenu xorg-xinit xorg
+sudo pacman -S --needed build-devel
 ```
 ### Compiling
 
 ```bash
 git clone https://github.com/gitmko/dwm-mko ~/.dwm && cd .dwm
 sudo make clean install
+```
+
+#### Fonts
+
+```bash
+cd $HOME/.dwm/scripts/
+bash fonts
+```
+#### Bar Script
+
+```bash
+cd $HOME/.dwm/scripts/
+mkdir -p $HOME/.local/bin/
+mv bar $HOME/.local/bin/
 ```
