@@ -210,6 +210,11 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
+
+/*
+* Choose between rofi and dmenu, dmenu has given me MANY headaches trying to run .desktop files so i bit the bullet
+*/
+
 static const char *dmenucmd[] = {
 	"dmenu_run",
 	"-m", dmenumon,
@@ -220,13 +225,16 @@ static const char *dmenucmd[] = {
 	"-sf", selfgcolor,
 	NULL
 };
+
+static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
+
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *filemanager[] = { "pcmanfm", NULL };
 
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
-	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = roficmd } },
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_Return,     spawn,                  {.v = filemanager } },
 	{ MODKEY,                       XK_b,          togglebar,              {0} },
