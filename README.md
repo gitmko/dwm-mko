@@ -20,7 +20,7 @@ My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.
 
 ## Automatic Installation
 
-(script requires `sudo` for some commands, read into it if you want)
+(script requires `sudo` for some commands, [read into it](https://github.com/gitmko/dwm-mko/blob/master/install) if you want)
 
 ```bash
 git clone https://github.com/gitmko/dwm-mko $HOME/.dwm
