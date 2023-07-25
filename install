@@ -12,10 +12,10 @@ oscheck=$(lsb_release -is)
 if [[ $oscheck == "Arch" ]] 
 then
         # Printing distro check
-	echo "Detected distro: $oscheck";
+	echo "################ Detected distro: $oscheck ################"
 
         # Dependency installation
-        pacman -Syyu picom lxappearance volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget ttf-roboto --noconfirm;
+        pacman -Syyu picom lxappearance polkit-gnome volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget ttf-roboto --noconfirm
 
         # Download Nordic Theme
         cd $builddir
@@ -23,35 +23,39 @@ then
 
         # Installing fonts
         cd $builddir
-        bash ./scripts/fonts;
+        bash ./scripts/fonts
 
         # Installing cursor theme
         cd $builddir
-        bash ./scripts/cursor;
+        bash ./scripts/cursor
 
         # Copying GTK folder
         mkdir -p /home/$username/.config/
         cd $builddir/gtk-themes
-        cp gtk-3.0 /home/$username/.config/
+        cp -r gtk-3.0 /home/$username/.config/
 
         # Compiling
         cd $builddir
-        make clean install;
+        make clean install
+
+        # Adding dwm to .xinitrc
+        echo "exec dwm" >> /home/$username/.xinitrc
 
         # Confirm that we're done
-        echo "dwm-mko has been installed on your Arch!";
+        echo "dwm-mko has been installed on your Arch!"
+        echo "Please run startx to launch into dwm."
 
 
 elif [[ $oscheck == "Debian" ]]
 then
         # Printing distro check
-        echo "Detected distro: $oscheck";
+        echo "Detected distro: $oscheck"
 
         # Dependency installation
-        apt install nala -y;
+        apt install nala -y
         
-        echo "Nala has been installed! (thank me later)";
-        nala install picom lxappearance volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip fonts-roboto flameshot -y;
+        echo "Nala has been installed! (thank me later)"
+        nala install picom lxappearance policykit-1-gnome volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip fonts-roboto flameshot -y
         
         # Download Nordic Theme
         mkdir -p /home/$username/.local/themes/
@@ -60,23 +64,27 @@ then
 
         # Installing fonts
         cd $builddir
-        bash ./scripts/fonts;
+        bash ./scripts/fonts
 
         # Installing cursor theme
         cd $builddir
-        bash ./scripts/cursor;
+        bash ./scripts/cursor
 
         # Copying GTK folder
         mkdir -p /home/$username/.config/
         cd $builddir/gtk-themes
-        cp gtk-3.0 /home/$username/.config/
+        cp -r gtk-3.0 /home/$username/.config/
 
         # Compiling
         cd $builddir
-        make clean install;
+        make clean install
+
+        # Adding dwm to .xinitrc
+        echo "exec dwm" >> /home/$username/.xinitrc
 
         # Confirm that we're done
-        echo "dwm-mko has been installed on Debian!";
+        echo "dwm-mko has been installed on Debian!"
+        echo "Please run startx to launch into dwm."
 else
         echo "Distro currently not supported, please make a PR/issue on github"
 fi
@@ -86,6 +94,6 @@ fi
 # elif [[ $oscheck == "Fedora" ]]
 # then
 #         # Printing distro check
-#         echo "Detected distro: $oscheck";
-#         cd /home/$SUDO_USER/.dwm;
-#         sudo make clean install;
+#         echo "Detected distro: $oscheck"
+#         cd /home/$SUDO_USER/.dwm
+#         sudo make clean install
