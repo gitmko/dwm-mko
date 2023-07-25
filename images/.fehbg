@@ -1,0 +1,4 @@
+#!/bin/sh
+# https://github.com/gitmko/dwm-mko
+
+feh --no-fehbg --bg-fill $HOME/.dwm/images/dwm-mko-wallpaper.png
