@@ -7,7 +7,7 @@ mkdir -p /usr/share/fonts/OTF
 cd /usr/share/fonts/OTF
 
 # Grabbing Fira Mono Nerd Font
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/FiraMono.zip -q
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/FiraMono.zip
 
 # Setting the font up
 unzip -qq FiraMono.zip
