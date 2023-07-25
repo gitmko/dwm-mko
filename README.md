@@ -17,14 +17,6 @@ TODO:
 
 ## Automatic Installation
 
-#### Clean Arch Install
-
-If you're running on a clean arch install, the `lsb-release` package (needed for the install script) won't be installed, install it with
-
-```bash
-sudo pacman -Sy lsb-release --noconfirm
-```
-
 (script requires `sudo` for some commands, read into it if you want)
 
 ```bash
@@ -81,6 +73,40 @@ bash cursor
 
 ```bash
 sudo pacman -Syyu flameshot polkit-gnome lxappearance wget picom volumeicon dunst feh pcmanfm alacritty dmenu xorg-xinit xorg ttf-roboto --noconfirm
+```
+### Compiling
+
+```bash
+git clone https://github.com/gitmko/dwm-mko ~/.dwm && cd .dwm
+sudo make clean install
+```
+
+#### Fonts
+
+```bash
+cd $HOME/.dwm/scripts/
+bash fonts
+```
+
+#### Nordic GTK Theme
+
+```bash
+cd $HOME/.dwm/scripts/
+bash gtk-theme
+```
+
+#### Nordzy-Cursors
+
+```bash
+cd $HOME/.dwm/scripts/
+bash cursor
+```
+## Manual Install instructions (Fedora)
+
+### Dependencies
+
+```bash
+dnf install picom lxappearance polkit-gnome volumeicon feh dunst pcmanfm alacritty dmenu rofi make gcc libX11-devel libXft-devel libXinerama-devel libXrandr-devel xorg-x11-xinit-session unzip zip google-roboto-fonts flameshot -y
 ```
 ### Compiling
 

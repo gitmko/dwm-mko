@@ -7,12 +7,12 @@ fi
 
 username=$(id -u -n 1000)
 builddir=/home/$username/.dwm/
-oscheck=$(lsb_release -is)
+oscheck=$(grep -Po "(?<=^ID=).+" /etc/os-release | sed 's/"//g')
 
-if [[ $oscheck == "Arch" ]] 
+if [[ $oscheck == "arch" ]] 
 then
         # Printing distro check
-	echo "################ Detected distro: $oscheck ################"
+	echo "################ Detected distro: Arch ################"
 
         # Dependency installation
         pacman -Syyu picom lxappearance polkit-gnome volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget ttf-roboto --noconfirm
@@ -45,18 +45,18 @@ then
         chown $username:$username /home/$username/.xinitrc
 
         # Confirm that we're done
-        echo "dwm-mko has been installed on your Arch!"
+        echo "dwm-mko has been installed on Arch!"
 
 
-elif [[ $oscheck == "Debian" ]]
+elif [[ $oscheck == "debian" ]]
 then
         # Printing distro check
-        echo "Detected distro: $oscheck"
+        echo "################ Detected distro: Debian ################"
 
         # Dependency installation
         apt install nala -y
-        
-        echo "Nala has been installed! (thank me later)"
+        echo "################ Nala has been installed! (thank me later) ################"
+
         nala install picom lxappearance policykit-1-gnome volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip fonts-roboto flameshot -y
         
         # Download Nordic Theme
@@ -88,15 +88,47 @@ then
 
         # Confirm that we're done
         echo "dwm-mko has been installed on Debian!"
-else
-        echo "Distro currently not supported, please make a PR/issue on github"
-fi
 
 ## FEDORA SUPPORT COMING IN THE FUTURE
 
-# elif [[ $oscheck == "Fedora" ]]
-# then
-#         # Printing distro check
-#         echo "Detected distro: $oscheck"
-#         cd /home/$SUDO_USER/.dwm
-#         sudo make clean install
+elif [[ $oscheck == "fedora" ]]
+then
+        # Printing distro check
+        echo "################ Detected distro: Fedora ################"
+
+        # Installing dependencies
+        dnf install picom lxappearance polkit-gnome volumeicon feh dunst pcmanfm alacritty dmenu rofi make gcc libX11-devel libXft-devel libXinerama-devel libXrandr-devel xorg-x11-xinit-session unzip zip google-roboto-fonts flameshot -y
+        
+        # Download Nordic Theme
+        cd $builddir
+        bash ./scripts/gtk-theme
+
+        # Installing fonts
+        cd $builddir
+        bash ./scripts/fonts
+
+        # Installing cursor theme
+        cd $builddir
+        bash ./scripts/cursor
+
+        # Copying GTK folder
+        mkdir -p /home/$username/.config/
+        cd $builddir/gtk-themes
+        cp -r gtk-3.0 /home/$username/.config/
+        chown $username:$username /home/$username/.config
+        chown $username:$username /home/$username/.config/gtk-3.0
+
+        # Compiling
+        cd $builddir
+        make clean install
+
+        # Adding dwm to .xinitrc
+        echo "exec dwm" >> /home/$username/.xinitrc
+        chown $username:$username /home/$username/.xinitrc
+
+        # Confirm that we're done
+        echo "dwm-mko has been installed on Fedora!"
+
+else
+        echo "This install script only supports Arch, Fedora and Debian, if you want more distros, make a PR/issue on the github."
+fi
