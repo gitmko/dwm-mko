@@ -19,7 +19,7 @@ TODO:
 If you're running on a clean arch install, the `lsb-release` package (needed for the install script) won't be installed, install it with
 
 ```bash
-sudo pacman -S lsb-release
+sudo pacman -Sy lsb-release --noconfirm
 ```
 
 (script requires `sudo` for some commands, read into it if you want)
@@ -62,7 +62,6 @@ bash fonts
 
 ```bash
 sudo pacman -Syyu flameshot wget picom volumeicon dunst feh pcmanfm alacritty dmenu xorg-xinit xorg --noconfirm
-sudo pacman -S --needed build-devel --noconfirm
 ```
 ### Compiling
 
