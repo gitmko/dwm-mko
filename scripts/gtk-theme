@@ -2,6 +2,6 @@
 
 username=$(id -u -n 1000)
 
-mkdir -p /home/$username/.local/themes/
-cd /home/$username/.local/themes/
+mkdir -p /usr/share/themes/
+cd /usr/share/themes/
 git clone https://github.com/EliverLara/Nordic.git

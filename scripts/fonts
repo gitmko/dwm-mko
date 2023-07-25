@@ -3,8 +3,8 @@
 username=$(id -u -n 1000)
 
 # Make the directory where the fonts are gonna be installed
-mkdir -p /home/$username/.local/share/fonts/OTF
-cd /home/$username/.local/share/fonts/OTF
+mkdir -p /usr/share/fonts/OTF
+cd /usr/share/fonts/OTF
 
 # Grabbing Fira Mono Nerd Font
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/FiraMono.zip -q
