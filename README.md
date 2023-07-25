@@ -35,12 +35,12 @@ sudo bash ./install
 ### Dependencies
 
 ```bash
-sudo apt install flameshot picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip -y
+sudo apt install flameshot lxappearance picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip -y
 ```
 Or with [nala](https://github.com/volitank/nala)
 
 ```bash
-sudo nala install flameshot picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip -y
+sudo nala install flameshot lxappearance picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip -y
 ```
 
 ### Compiling 
@@ -61,7 +61,7 @@ bash fonts
 ### Dependencies
 
 ```bash
-sudo pacman -Syyu flameshot wget picom volumeicon dunst feh pcmanfm alacritty dmenu xorg-xinit xorg --noconfirm
+sudo pacman -Syyu flameshot lxappearance wget picom volumeicon dunst feh pcmanfm alacritty dmenu xorg-xinit xorg --noconfirm
 ```
 ### Compiling
 

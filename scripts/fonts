@@ -1,11 +1,20 @@
 #!/usr/bin/env bash
 
-mkdir -p /home/$SUDO_USER/.local/share/fonts/OTF
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraMono.zip -q
-unzip -qq FiraMono.zip
-command rm -f LICENSE
-command rm -f readme.md
-command rm -f FiraMono.zip
-mv *.otf /home/$SUDO_USER/.local/share/fonts/OTF
+username=$(id -u -n 1000)
 
-echo "Font installed!"
+# Make the directory where the fonts are gonna be installed
+mkdir -p /home/$username/.local/share/fonts/OTF
+
+# Grabbing Fira Mono Nerd Font
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/FiraMono.zip -q
+
+# Setting the font up
+unzip -qq FiraMono.zip
+rm -f readme.md
+rm -f FiraMono.zip
+mv *.otf /home/$username/.local/share/fonts/OTF
+
+# Reload cache
+fc-cache -vf
+
+echo "################ Font installed! ################"

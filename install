@@ -5,34 +5,69 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-oscheck="$(lsb_release -is)"
+username=$(id -u -n 1000)
+builddir=/home/$username/.dwm/
+oscheck=$(lsb_release -is)
 
 if [[ $oscheck == "Arch" ]] 
 then
         # Printing distro check
 	echo "Detected distro: $oscheck";
+
         # Dependency installation
-        pacman -Syyu picom volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget --noconfirm;
-         # Installing fonts
+        pacman -Syyu picom lxappearance volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget --noconfirm;
+
+        # Download Nordic Theme
+        mkdir -p /home/$username/.local/themes/
+        cd /home/$username/.local/themes/
+        git clone https://github.com/EliverLara/Nordic.git
+
+        # Installing fonts
+        cd $builddir
         bash ./scripts/fonts;
+
+        # Installing cursor theme
+        cd $builddir
+        bash ./scripts/cursor;
+
         # Compiling
+        cd $builddir
         make clean install;
+
         # Confirm that we're done
-        echo "dwm-mko has been installed on your arch machine!";
+        echo "dwm-mko has been installed on your Arch!";
+
+
 elif [[ $oscheck == "Debian" ]]
 then
         # Printing distro check
         echo "Detected distro: $oscheck";
+
         # Dependency installation
         apt install nala -y;
+        
         echo "Nala has been installed! (thank me later)";
-        nala install picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip flameshot -y;
+        nala install picom lxappearance volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip flameshot -y;
+        
+        # Download Nordic Theme
+        mkdir -p /home/$username/.local/themes/
+        cd /home/$username/.local/themes/
+        git clone https://github.com/EliverLara/Nordic.git
+
         # Installing fonts
+        cd $builddir
         bash ./scripts/fonts;
+
+        # Installing cursor theme
+        cd $builddir
+        bash ./scripts/cursor;
+
         # Compiling
+        cd $builddir
         make clean install;
+
         # Confirm that we're done
-        echo "dwm-mko has been installed on your debian machine!";
+        echo "dwm-mko has been installed on Debian!";
 else
         echo "Distro currently not supported, please make a PR/issue on github"
 fi

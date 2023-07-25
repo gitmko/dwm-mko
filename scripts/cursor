@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+username=$(id -u -n 1000)
+
+# Making temp folders
+mkdir -p /home/$username/temp/
+cd /home/$username/temp/
+
+# Installing Nordzy cursors
+git clone https://github.com/alvatip/Nordzy-cursors
+cd Nordzy-cursors
+./install.sh
+
+# Removing temp folder
+cd
+rm -rf /home/$username/temp
