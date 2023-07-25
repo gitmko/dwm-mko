@@ -8,7 +8,7 @@ fi
 username=$(id -u -n 1000)
 builddir=/home/$username/.dwm/
 oscheck=$(grep -Po "(?<=^ID=).+" /etc/os-release | sed 's/"//g')
-wallpaper=$(ls -a | grep .fehbg)
+fehbg=/home/$username/.fehbg
 
 if [[ $oscheck == "arch" ]] 
 then
@@ -19,15 +19,18 @@ then
         pacman -Syyu picom lxappearance polkit-gnome volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget ttf-roboto --noconfirm
 
         # Wallpaper
-        if [[ $wallpaper = ".fehbg" ]]
+        if [[ -f "$fehbg" ]]; then
         then
                 cd /home/$username
                 mv .fehbg .fehbg.bak
                 cd $buildir/images
                 cp .fehbg /home/$username
+                chown $username:$username .fehbg  
         else
                 cd $buildir/images
                 cp .fehbg /home/$username
+                chown $username:$username .fehbg
+
         fi
 
         # Download Nordic Theme
@@ -73,15 +76,18 @@ then
         nala install picom lxappearance policykit-1-gnome volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip fonts-roboto flameshot -y
 
         # Wallpaper
-        if [[ $wallpaper = ".fehbg" ]]
+        if [[ -f "$fehbg" ]]; then
         then
                 cd /home/$username
                 mv .fehbg .fehbg.bak
                 cd $buildir/images
                 cp .fehbg /home/$username
+                chown $username:$username .fehbg  
         else
                 cd $buildir/images
                 cp .fehbg /home/$username
+                chown $username:$username .fehbg
+
         fi
         
         # Download Nordic Theme
@@ -122,18 +128,21 @@ then
         echo "################ Detected distro: Fedora ################"
 
         # Installing dependencies
-        dnf install picom lxappearance polkit-gnome volumeicon feh dunst pcmanfm alacritty dmenu rofi make gcc libX11-devel libXft-devel libXinerama-devel libXrandr-devel xorg-x11-xinit-session unzip zip google-roboto-fonts flameshot -y
+        dnf install xrandr xsetroot picom lxappearance polkit-gnome volumeicon feh dunst pcmanfm alacritty dmenu rofi make gcc libX11-devel libXft-devel libXinerama-devel libXrandr-devel xorg-x11-xinit-session unzip zip google-roboto-fonts flameshot -y
 
         # Wallpaper
-        if [[ $wallpaper = ".fehbg" ]]
+        if [[ -f "$fehbg" ]]; then
         then
                 cd /home/$username
                 mv .fehbg .fehbg.bak
                 cd $buildir/images
                 cp .fehbg /home/$username
+                chown $username:$username .fehbg  
         else
                 cd $buildir/images
                 cp .fehbg /home/$username
+                chown $username:$username .fehbg
+
         fi
         
         # Download Nordic Theme
