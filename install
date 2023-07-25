@@ -46,7 +46,6 @@ then
 
         # Confirm that we're done
         echo "dwm-mko has been installed on your Arch!"
-        echo "Please run startx to launch into dwm."
 
 
 elif [[ $oscheck == "Debian" ]]
@@ -85,10 +84,10 @@ then
 
         # Adding dwm to .xinitrc
         echo "exec dwm" >> /home/$username/.xinitrc
+        chown $username:$username /home/$username/.xinitrc
 
         # Confirm that we're done
         echo "dwm-mko has been installed on Debian!"
-        echo "Please run startx to launch into dwm."
 else
         echo "Distro currently not supported, please make a PR/issue on github"
 fi

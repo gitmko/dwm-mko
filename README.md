@@ -7,12 +7,15 @@ My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.
 ![image](images/dwm-desktop.png)
 
 TODO:
-- ~~Automatic Install Script~~ *WORKING ON THIS!*
+- Automatic Install Script
+  - Arch ✅
+  - Debian ✅
+  - Fedora ❌
 - Add Fedora Guide
 - Add some keybinds
 - Add window rules
 
-## Automatic Installation (alpha)
+## Automatic Installation
 
 #### Clean Arch Install
 
@@ -27,7 +30,7 @@ sudo pacman -Sy lsb-release --noconfirm
 ```bash
 git clone https://github.com/gitmko/dwm-mko $HOME/.dwm
 cd $HOME/.dwm
-sudo bash ./install
+sudo ./install
 ```
 
 ## Manual Install instructions (Debian)
