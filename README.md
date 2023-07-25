@@ -35,7 +35,7 @@ sudo bash ./install
 ### Dependencies
 
 ```bash
-sudo apt install flameshot lxappearance picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip fonts-roboto -y
+sudo apt install flameshot policykit-1-gnome lxappearance picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip fonts-roboto -y
 ```
 
 Or with [nala](https://github.com/volitank/nala)
@@ -77,7 +77,7 @@ bash cursor
 ### Dependencies
 
 ```bash
-sudo pacman -Syyu flameshot lxappearance wget picom volumeicon dunst feh pcmanfm alacritty dmenu xorg-xinit xorg ttf-roboto --noconfirm
+sudo pacman -Syyu flameshot polkit-gnome lxappearance wget picom volumeicon dunst feh pcmanfm alacritty dmenu xorg-xinit xorg ttf-roboto --noconfirm
 ```
 ### Compiling
 
