@@ -12,7 +12,7 @@ then
         kernel() {
             echo -e " $(uname -r | sed s/-amd64//g)"
         }
-elif [[ $oscheck == "fedora"]]
+elif [[ $oscheck == "fedora" ]]
 then
         kernel() {
             echo -e " $(uname -r | sed s/-300.fc38.x86_64//g)"
