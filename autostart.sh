@@ -1,14 +1,14 @@
-oscheck="$(lsb_release -is)"
+oscheck="$(grep -Po "(?<=^ID=).+" /etc/os-release | sed 's/"//g')"
 
-if [[ $oscheck == "Arch" ]] 
+if [[ $oscheck == "arch" ]] 
 then
-	bash /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-elif [[ $oscheck == "Debian" ]]
+	bash /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+elif [[ $oscheck == "debian" ]]
 then
-    bash /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
-# elif [[ $oscheck == "Fedora" ]]
-# then
-        # /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 (or sum like this)
+    bash /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+elif [[ $oscheck == "fedora" ]]
+then
+        bash /usr/libexec/polkit-gnome-authentication-agent-1 &
 fi
 
 bash $HOME/.dwm/scripts/bar &
