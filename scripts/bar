@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-oscheck="$(lsb_release -is)"
+oscheck="$(grep -Po "(?<=^ID=).+" /etc/os-release | sed 's/"//g')"
 
 if [[ $oscheck == "arch" ]] 
 then
