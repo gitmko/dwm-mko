@@ -7,12 +7,12 @@ My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.
 ![image](images/dwm-desktop.png)
 
 TODO:
-- Automatic Install Script
+~~ - Automatic Install Script~~
   - Arch ✅
   - Debian ✅
-  - Fedora ❌
-- Add Fedora Guide
-- Add some keybinds
+  - Fedora ✅
+~~- Add Fedora Guide~~
+~~- Add some keybinds~~
 - Add window rules
 
 ## Automatic Installation
@@ -101,6 +101,7 @@ bash gtk-theme
 cd $HOME/.dwm/scripts/
 bash cursor
 ```
+
 ## Manual Install instructions (Fedora)
 
 ### Dependencies
