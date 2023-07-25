@@ -19,18 +19,8 @@ then
         pacman -Syyu picom lxappearance polkit-gnome volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget ttf-roboto --noconfirm
 
         # Wallpaper
-        if [[ -e "$fehbg" ]];
-        then
-                cd /home/$username
-                mv .fehbg .fehbg.bak
-                cd $buildir/images
-                cp .fehbg /home/$username
-                chown $username:$username .fehbg  
-        else
-                cd $buildir/images
-                cp .fehbg /home/$username
-                chown $username:$username .fehbg
-        fi
+        cd $builddir
+        bash ./scripts/wallpaper
 
         # Download Nordic Theme
         cd $builddir

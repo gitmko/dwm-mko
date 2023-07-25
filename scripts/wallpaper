@@ -6,11 +6,11 @@ if [[ -e "$fehbg" ]];
         then
                 cd /home/$username
                 mv .fehbg .fehbg.bak
-                cd $buildir/images
+                cd $builddir/images
                 cp .fehbg /home/$username
                 chown $username:$username .fehbg  
         else
-                cd $buildir/images
+                cd $builddir/images
                 cp .fehbg /home/$username
                 chown $username:$username .fehbg
         fi
