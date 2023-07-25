@@ -35,12 +35,13 @@ sudo bash ./install
 ### Dependencies
 
 ```bash
-sudo apt install flameshot lxappearance picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip -y
+sudo apt install flameshot lxappearance picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip fonts-roboto -y
 ```
+
 Or with [nala](https://github.com/volitank/nala)
 
 ```bash
-sudo nala install flameshot lxappearance picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip -y
+sudo nala install flameshot lxappearance picom volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools make gcc libx11-dev libxft-dev libxinerama-dev xorg zip unzip fonts-roboto -y
 ```
 
 ### Compiling 
@@ -49,6 +50,7 @@ sudo nala install flameshot lxappearance picom volumeicon-alsa feh dunst pcmanfm
 git clone https://github.com/gitmko/dwm-mko ~/.dwm && cd .dwm
 sudo make clean install
 ```
+
 #### Fonts
 
 ```bash
@@ -56,12 +58,26 @@ cd $HOME/.dwm/scripts/
 bash fonts
 ```
 
+#### Nordic GTK Theme
+
+```bash
+cd $HOME/.dwm/scripts/
+bash gtk-theme
+```
+
+#### Nordzy-Cursors
+
+```bash
+cd $HOME/.dwm/scripts/
+bash cursor
+```
+
 ## Manual Install instructions (Arch)
 
 ### Dependencies
 
 ```bash
-sudo pacman -Syyu flameshot lxappearance wget picom volumeicon dunst feh pcmanfm alacritty dmenu xorg-xinit xorg --noconfirm
+sudo pacman -Syyu flameshot lxappearance wget picom volumeicon dunst feh pcmanfm alacritty dmenu xorg-xinit xorg ttf-roboto --noconfirm
 ```
 ### Compiling
 
@@ -75,4 +91,18 @@ sudo make clean install
 ```bash
 cd $HOME/.dwm/scripts/
 bash fonts
+```
+
+#### Nordic GTK Theme
+
+```bash
+cd $HOME/.dwm/scripts/
+bash gtk-theme
+```
+
+#### Nordzy-Cursors
+
+```bash
+cd $HOME/.dwm/scripts/
+bash cursor
 ```

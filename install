@@ -15,12 +15,11 @@ then
 	echo "Detected distro: $oscheck";
 
         # Dependency installation
-        pacman -Syyu picom lxappearance volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget --noconfirm;
+        pacman -Syyu picom lxappearance volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget ttf-roboto --noconfirm;
 
         # Download Nordic Theme
-        mkdir -p /home/$username/.local/themes/
-        cd /home/$username/.local/themes/
-        git clone https://github.com/EliverLara/Nordic.git
+        cd $builddir
+        bash ./scripts/gtk-theme
 
         # Installing fonts
         cd $builddir
@@ -29,6 +28,11 @@ then
         # Installing cursor theme
         cd $builddir
         bash ./scripts/cursor;
+
+        # Copying GTK folder
+        mkdir -p /home/$username/.config/
+        cd $builddir/gtk-themes
+        cp gtk-3.0 /home/$username/.config/
 
         # Compiling
         cd $builddir
@@ -47,7 +51,7 @@ then
         apt install nala -y;
         
         echo "Nala has been installed! (thank me later)";
-        nala install picom lxappearance volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip flameshot -y;
+        nala install picom lxappearance volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip fonts-roboto flameshot -y;
         
         # Download Nordic Theme
         mkdir -p /home/$username/.local/themes/
@@ -61,6 +65,11 @@ then
         # Installing cursor theme
         cd $builddir
         bash ./scripts/cursor;
+
+        # Copying GTK folder
+        mkdir -p /home/$username/.config/
+        cd $builddir/gtk-themes
+        cp gtk-3.0 /home/$username/.config/
 
         # Compiling
         cd $builddir
