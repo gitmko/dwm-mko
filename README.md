@@ -13,9 +13,9 @@ My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.
 
 ### TODO:
 
-~~- Automatic Install Script~~
-~~- Add Fedora Guide~~
-~~- Add some keybinds~~
+- ~~Automatic Install Script~~
+- ~~Add Fedora Guide~~
+- ~~Add some keybinds~~
 - Add window rules
 
 ## Automatic Installation
