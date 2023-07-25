@@ -8,6 +8,7 @@ fi
 username=$(id -u -n 1000)
 builddir=/home/$username/.dwm/
 oscheck=$(grep -Po "(?<=^ID=).+" /etc/os-release | sed 's/"//g')
+wallpaper=$(ls -a | grep .fehbg)
 
 if [[ $oscheck == "arch" ]] 
 then
@@ -16,6 +17,18 @@ then
 
         # Dependency installation
         pacman -Syyu picom lxappearance polkit-gnome volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget ttf-roboto --noconfirm
+
+        # Wallpaper
+        if [[ $wallpaper = ".fehbg" ]]
+        then
+                cd /home/$username
+                mv .fehbg .fehbg.bak
+                cd $buildir/images
+                cp .fehbg /home/$username
+        else
+                cd $buildir/images
+                cp .fehbg /home/$username
+        fi
 
         # Download Nordic Theme
         cd $builddir
@@ -58,6 +71,18 @@ then
         echo "################ Nala has been installed! (thank me later) ################"
 
         nala install picom lxappearance policykit-1-gnome volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip fonts-roboto flameshot -y
+
+        # Wallpaper
+        if [[ $wallpaper = ".fehbg" ]]
+        then
+                cd /home/$username
+                mv .fehbg .fehbg.bak
+                cd $buildir/images
+                cp .fehbg /home/$username
+        else
+                cd $buildir/images
+                cp .fehbg /home/$username
+        fi
         
         # Download Nordic Theme
         cd $builddir
@@ -98,6 +123,18 @@ then
 
         # Installing dependencies
         dnf install picom lxappearance polkit-gnome volumeicon feh dunst pcmanfm alacritty dmenu rofi make gcc libX11-devel libXft-devel libXinerama-devel libXrandr-devel xorg-x11-xinit-session unzip zip google-roboto-fonts flameshot -y
+
+        # Wallpaper
+        if [[ $wallpaper = ".fehbg" ]]
+        then
+                cd /home/$username
+                mv .fehbg .fehbg.bak
+                cd $buildir/images
+                cp .fehbg /home/$username
+        else
+                cd $buildir/images
+                cp .fehbg /home/$username
+        fi
         
         # Download Nordic Theme
         cd $builddir
