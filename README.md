@@ -6,11 +6,14 @@ My Heavily Patched DWM Configuration built with [dwm-flexipatch](https://github.
 
 ![image](images/dwm-desktop.png)
 
-TODO:
-~~- Automatic Install Script~~
+## Distros supported:
   - Arch ✅
   - Debian ✅
   - Fedora ✅
+
+### TODO:
+
+~~- Automatic Install Script~~
 ~~- Add Fedora Guide~~
 ~~- Add some keybinds~~
 - Add window rules
