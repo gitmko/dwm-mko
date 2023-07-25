@@ -19,7 +19,7 @@ then
         pacman -Syyu picom lxappearance polkit-gnome volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget ttf-roboto --noconfirm
 
         # Wallpaper
-        if [[ -f "$fehbg" ]]; then
+        if [[ -f "$fehbg" ]];
         then
                 cd /home/$username
                 mv .fehbg .fehbg.bak
@@ -76,7 +76,7 @@ then
         nala install picom lxappearance policykit-1-gnome volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip fonts-roboto flameshot -y
 
         # Wallpaper
-        if [[ -f "$fehbg" ]]; then
+        if [[ -f "$fehbg" ]];
         then
                 cd /home/$username
                 mv .fehbg .fehbg.bak
