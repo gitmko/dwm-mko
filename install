@@ -19,7 +19,7 @@ then
         pacman -Syyu picom lxappearance polkit-gnome volumeicon dunst feh pcmanfm alacritty rofi dmenu xorg-xinit xorg unzip zip flameshot wget ttf-roboto --noconfirm
 
         # Wallpaper
-        if [[ -f "$fehbg" ]];
+        if [[ -e "$fehbg" ]];
         then
                 cd /home/$username
                 mv .fehbg .fehbg.bak
@@ -30,7 +30,6 @@ then
                 cd $buildir/images
                 cp .fehbg /home/$username
                 chown $username:$username .fehbg
-
         fi
 
         # Download Nordic Theme
@@ -71,12 +70,13 @@ then
 
         # Dependency installation
         apt install nala -y
+
         echo "################ Nala has been installed! (thank me later) ################"
 
         nala install picom lxappearance policykit-1-gnome volumeicon-alsa feh dunst pcmanfm alacritty suckless-tools rofi make gcc libx11-dev libxft-dev libxinerama-dev xorg unzip zip fonts-roboto flameshot -y
 
         # Wallpaper
-        if [[ -f "$fehbg" ]];
+        if [[ -e "$fehbg" ]];
         then
                 cd /home/$username
                 mv .fehbg .fehbg.bak
@@ -87,7 +87,6 @@ then
                 cd $buildir/images
                 cp .fehbg /home/$username
                 chown $username:$username .fehbg
-
         fi
         
         # Download Nordic Theme
@@ -131,7 +130,7 @@ then
         dnf install xrandr xsetroot picom lxappearance polkit-gnome volumeicon feh dunst pcmanfm alacritty dmenu rofi make gcc libX11-devel libXft-devel libXinerama-devel libXrandr-devel xorg-x11-xinit-session unzip zip google-roboto-fonts flameshot -y
 
         # Wallpaper
-        if [[ -f "$fehbg" ]];
+        if [[ -e "$fehbg" ]];
         then
                 cd /home/$username
                 mv .fehbg .fehbg.bak
@@ -142,7 +141,6 @@ then
                 cd $buildir/images
                 cp .fehbg /home/$username
                 chown $username:$username .fehbg
-
         fi
         
         # Download Nordic Theme

@@ -1,0 +1,16 @@
+username=$(id -u -n 1000)
+builddir=/home/$username/.dwm/
+fehbg=/home/$username/.fehbg
+
+if [[ -e "$fehbg" ]];
+        then
+                cd /home/$username
+                mv .fehbg .fehbg.bak
+                cd $buildir/images
+                cp .fehbg /home/$username
+                chown $username:$username .fehbg  
+        else
+                cd $buildir/images
+                cp .fehbg /home/$username
+                chown $username:$username .fehbg
+        fi
