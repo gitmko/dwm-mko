@@ -12,6 +12,8 @@
 /* Other patches */
 #include "attachx.c"
 #include "autostart.c"
+#include "pertag.c"
+#include "placemouse.c"
 #include "warp.c"
 /* Layouts */
 #include "layout_facts.c"
