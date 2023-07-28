@@ -223,8 +223,8 @@ static const char *dmenucmd[] = {
 
 static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
 
-static const char *termcmd[]  = { "kitty", NULL };
-static const char *filemanager[] = { "thunar", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
+static const char *filemanager[] = { "pcmanfm", NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL };
 
 
